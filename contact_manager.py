@@ -5,7 +5,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 # Import the Contact class from lab3.py
-from lab3 import Contact
+from lab3 import Contacts
 
 class ContactManager:
     # __init__ method initialises the contacts list.
@@ -14,15 +14,19 @@ class ContactManager:
 
     # The parameters 'name', 'email', and 'phone' are used to create a new contact.
     def add_contact(self, name, email, phone):
-        new_contact = Contact(name, email, phone)
+        new_contact = Contacts(name, email, phone)
         self.contacts.append(new_contact)
         print(f"Added new contact: {name}")
 
     def display_contacts(self):
         # TODO: Implement this method to print all contact details.
+        for contact in self.contacts:
+            print(contact)
         # You may choose to create a __str__ method in the Contact class or implement this method here.
-        pass # Then, remove this line.
 
+    def get_contact_amount(self):
+        return Contacts.number_of_contacts
+    
     # The parameter 'name' is used to identify the contact to update.
     # The parameters 'new_email' and 'new_phone' are optional and can be used to update the contact's email and phone.
     # You can update only the email, only the phone, or both by providing the respective parameters.

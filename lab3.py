@@ -32,11 +32,16 @@ class Contacts:
     @classmethod
     def get_contact_number(cls):
         return Contacts.number_of_contacts
-        
+    
+    def __str__(self):
+        return f"{self.name}, {self.phone}, {self.email}"
+
+        '''
 contact1 = Contacts("Bill Smith", "350285", "billsmith@cheese.com")
 contact2 = Contacts("Grug Williams", "135187", "grug123@a.site.com")
  
 contact1.check_email()
 Contacts.get_contact_number()
 
-
+print(contact1)
+'''
